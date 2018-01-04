@@ -1,0 +1,40 @@
+/* large-hero styles from here */
+.large-hero
+  width: 100%
+  position: relative
+
+  &__image
+    display: block
+
+  &__text-content
+    +centerer
+    width: 100%
+    text-align: center
+    +breakpoint($phone-l)
+      padding-top: $base-spacing
+
+
+  &__title
+    color: white
+    font-weight: 300
+    margin: 0
+    +font-size(2)
+    +breakpoint($phone-l)
+      +font-size(4)
+    +breakpoint($desktop-l)
+      +font-size(5)
+
+  &__subtitle
+    font-weight: 300
+    color: white
+    margin: $small-spacing/4
+    +font-size(1.5)
+    +breakpoint($phone-l)
+      +font-size(2)
+    +breakpoint($desktop-l)
+      +font-size(3)
+
+  &__description
+    color: white
+    font-weight: 100
+    text-shadow: $text-shadow

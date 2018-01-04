@@ -1,0 +1,196 @@
+html
+  font-size: $root-font-size
+
+body
+  color: $base-font-color
+  font-family: $base-font-family
+  //antialiasing all browsers
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+  -moz-osx-font-smoothing: grayscale
+  -moz-font-smoothing: antialiased
+  -webkit-backface-visibility: hidden
+  backface-visibility: hidden
+
+//	Headings all
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family: $heading-font-family
+  line-height: $heading-line-height
+
+//	Headings specific
+.gigantic, .huge, .large, .bigger, .big,
+h1, h2, h3, h4, h5, h6
+  color: $headline-font-color
+  font-weight: 600
+  margin: $base-spacing/2 0
+
+// Basic Text Style
+p
+  margin: 0 0 $base-spacing
+
+p ~ p
+  margin: 0 0 $small-spacing
+
+p:last-of-type
+  margin: 0 0 $base-spacing
+
+hr
+  border-bottom: $base-border
+  border-left: 0
+  border-right: 0
+  border-top: 0
+  margin: $base-spacing 0
+  clear: both
+
+em
+  font-style: italic
+
+strong
+  font-weight: 600
+pre
+  display: block
+  padding: $small-spacing
+  margin: 0 0 $small-spacing
+  color: #333
+  word-break: break-all
+  word-wrap: break-word
+  background-color: $light-gray
+  border: 1px solid $medium-gray
+  border-radius: $base-border-radius
+  overflow-y: auto
+
+blockquote
+  padding: 10px $base-spacing
+  margin: 0 0 $base-spacing
+  //gray
+  //border-left: 8px solid darken($light-gray, 10%)
+  //brand
+  border-left: 8px solid $brand
+
+// Links
+a
+  color: $action-color
+  text-decoration: none
+  transition: color $base-duration $base-timing
+  outline: 0
+  &:active,
+  &:focus,
+  &:hover
+    color: shade($action-color, 10%)
+
+//Typography small and up
+
+body
+  +font-size(1)
+  line-height: $base-line-height
+
+.huge, h1
+  +font-size(2)
+  line-height: 1.25
+  letter-spacing: 1px
+
+.large, h2
+  +font-size(1.625)
+  line-height: 1.15384615
+
+.bigger, h3
+  +font-size(1.375)
+  line-height: 1.13636364
+
+.big, h4
+  +font-size(1.125)
+  line-height: 1.11111111
+
+.small, small
+  +font-size(0.75)
+  line-height: 1.25
+
+
+blockquote
+  +font-size(1.5)
+  line-height: 1.45833333
+
+//Typography TABLET Landscape and up
++breakpoint($tablet-l)
+  body
+    //line-height: $base-line-height;
+
+  .huge, h1
+    +font-size(2.5)
+    line-height: 1.125
+    letter-spacing: -1px
+
+  .large, h2
+    +font-size(2)
+    line-height: 1.25
+
+  .bigger, h3
+    +font-size(1.5)
+    line-height: 1.25
+
+  .big, h4
+    +font-size(1.125)
+    line-height: 1.22222222
+
+  .small, small
+    +font-size(0.75)
+    line-height: 1.22222222
+
+  blockquote
+    +font-size(1.5)
+    line-height: 1.6
+
+
+//Typography DESKTOP and up
++breakpoint($desktop)
+  .gigantic
+    +font-size(8.625)
+    line-height: 1.09
+    letter-spacing: -2px
+
+  .huge, h1
+    +font-size(3)
+    line-height: 1.05
+    letter-spacing: -1px
+
+  .large, h2
+    +font-size(2.25)
+    line-height: 1.25
+
+  .bigger, h3
+    +font-size(1.75)
+    line-height: 1.25
+
+
+//Typography LARGE SCREENS
++breakpoint($desktop-l)
+  body
+    +font-size(1.125)
+    line-height: 1.625
+
+  .gigantic
+    +font-size(9.75)
+    line-height: 1.25
+    letter-spacing: -2px
+
+  .huge, h1
+    +font-size(3.5)
+    line-height: 1.125
+    letter-spacing: -1px
+
+  .large, h2
+    +font-size(2.75)
+    line-height: 1.25
+
+  .bigger, h3
+    +font-size(2.125)
+    line-height: 1.25
+
+  .big, h4
+    +font-size(1.5)
+    line-height: 1.22222222

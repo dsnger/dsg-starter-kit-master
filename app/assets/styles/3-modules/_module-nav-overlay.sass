@@ -1,0 +1,80 @@
+/* Navigation Overlay style
+
+.nav-overlay
+  +coverer
+  background: rgba($brand, 0.9)
+
+  nav
+    text-align: center
+    position: relative
+    top: 50%
+    height: 60%
+    transform: translateY(-50%)
+  ul
+    list-style: none
+    padding: 0
+    margin: 0 auto
+    display: inline-block
+    height: 100%
+    position: relative
+    li
+      display: block
+      height: 20%
+      height: calc(100% / 5)
+      min-height: 54px
+      -webkit-backface-visibility: hidden
+      backface-visibility: hidden
+      a
+        font-size: 54px
+        font-weight: 300
+        display: block
+        color: #fff
+        -webkit-transition: color 0.2s
+        transition: color 0.2s
+        &:hover, &:focus
+          color: #f0f0f0
+
+//overlay effect
+html, body
+  overflow-x: hidden
+
+.site-wrapper
+  overflow-x: hidden
+  transition: transform 0.5s
+  &.nav-overlay--open
+    transform: translateX(-50%)
+
+  &::after
+    content: ''
+    opacity: 0
+    visibility: hidden
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.6)
+    transition: opacity 0.5s, visibility 0s 0.5s
+  &.nav-overlay--open::after
+    visibility: visible
+    opacity: 1
+    transition: opacity 0.5s
+
+.nav-overlay--contentpush
+  background: rgba($brand, 1)
+  visibility: hidden
+  backface-visibility: hidden
+  transform: translateX(100%)
+  transition: transform 0.5s, visibility 0s 0.5s
+  &.open
+    visibility: visible
+    transform: translateX(0%)
+    transition: transform 0.5s
+
+@media screen and (max-height: 30.5em)
+  .nav-overlay
+    nav
+      height: 70%
+      font-size: 34px
+    ul li
+      min-height: 34px

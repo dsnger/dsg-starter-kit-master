@@ -1,0 +1,147 @@
+#{$all-buttons},.button
+  &.hamburger
+    &:focus
+      outline: none
+  &:not(.hamburger), &:link
+    appearance: none
+    background-color: $brand
+    border: none
+    border-radius: $base-border-radius
+    color: white
+    cursor: pointer
+    display: inline-block
+    font-family: $base-font-family
+    //mobile first
+    +small-font-size()
+    letter-spacing: .04em
+    font-weight: 600
+    line-height: $base-spacing * 1.75
+    padding: 0 ($base-spacing * 1.2)
+    margin: $small-spacing/4
+    text-align: center
+    text-decoration: none
+    text-transform: uppercase
+    transition: all $base-duration $base-timing
+    user-select: none
+    vertical-align: baseline
+    white-space: nowrap
+
+    &:hover,
+    &:focus
+      background-color: darken($brand, 10%)
+      color: $white
+      border-color: darken($action-color, 10%)
+      outline: none
+
+    &:active:not(:disabled)
+      transform: scale(.95)
+      background-color: darken($brand, 15%)
+      border-color: darken($action-color, 15%)
+
+    &:disabled
+      cursor: not-allowed
+      opacity: 0.5
+      &:hover
+        background-color: $action-color
+
+    //media queries
+    +breakpoint ($tablet-l)
+      +small-font-size()
+
+    +breakpoint ($desktop-l)
+      +font-size(1)
+
+
+    //BUTTON SIZES
+
+    &.button--large
+      +font-size(1)
+
+      +breakpoint ($tablet-l)
+        +font-size(1.1)
+        //box-shadow: 0 4px 0 0 $brand-secondary
+        border-radius: $base-border-radius
+
+      +breakpoint ($desktop)
+        +font-size(1.2)
+        //box-shadow: 0 4px 0 0 $brand-secondary
+        border-radius: $base-border-radius +1
+
+
+    &.button--small
+      +font-size(.6)
+      border-radius: $base-border-radius - 2
+      //line-height: $base-spacing * 1.6
+      padding: 0 ($base-spacing * 1)
+      letter-spacing: .01
+      +breakpoint ($tablet-l)
+        +font-size(0.7)
+
+      +breakpoint ($desktop-l)
+        +small-font-size()
+
+
+
+    //BUTTON VARIANTS
+
+    &.button--light
+      border: none
+      background: transparent
+      color: $brand
+      &:hover
+        background-color: $light-gray
+        color: $brand
+      &:active
+        background-color: darken($light-gray, 2%)
+
+    &.button--outline
+      border: 2px solid $brand
+      line-height: $base-spacing * 1.6
+      background-color: transparent
+      color: $brand
+      font-weight: 600
+      box-shadow: none
+      transition: background-color $base-duration $base-timing
+      &:hover,
+      &:focus
+        background-color: transparent
+        border-color: darken($action-color, 10%)
+        outline: 0
+      &:active
+        transform: none
+        background-color: rgba($brand, 0.9)
+        color: white
+
+
+  //BUTTON EFECT WHITHOUT JS
+
+.button--effect
+  transition: all .2s
+  position: relative
+
+  &::after
+      content: ''
+      display: inline-block
+      height: 100%
+      width: 100%
+      border-radius: 5rem
+      position: absolute
+      border-radius: $base-border-radius
+      top: 0
+      left: 0
+      z-index: -1
+      transition: all .4s
+      background-color: $brand
+
+  &:hover
+    transform: translateY(-3px)
+    box-shadow: 0 1em 2em rgba($black,.2)
+
+    &::after
+      transform: scaleX(1.4) scaleY(1.6)
+      opacity: 0
+
+  &:active:not(:disabled)
+    outline: none
+    transform: scale(.99)!important
+    box-shadow: 0 .5em 1em rgba($black,.2)!important

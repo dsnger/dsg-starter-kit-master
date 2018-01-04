@@ -1,0 +1,81 @@
+
+//show susy grid, requires susy
+// =showGrid ()
+//   background: susy-svg-grid() no-repeat scroll
+
+//Mixin Button Colors
+=button-color($btncolor, $btncolorh: $btncolor, $txtcolor: $white, $txtcolorh: $txtcolor)
+  background-color: $btncolor
+  border: 1px solid $btncolor
+  color: $txtcolor
+
+  &:hover,
+  &:focus
+    background-color: $btncolorh
+    color: $txtcolorh
+    border-color: $btncolorh
+    outline: 0
+
+  &.waves-btncolor .waves-ripple
+    +waves-btncolor(darken($btncolorh, 30%))
+
+//Mixin Wave Button Colors
+=waves-btncolor($btncolor)
+  +waves-color($btncolor)
+
+
+//Font Size - using REM: rem to px fallback
+=font-size($sizeValue: 1)
+  font-size: $sizeValue * $root-font-size
+  font-size: $sizeValue + rem
+
+=base-font-size()
+  +font-size(1)
+
+=small-font-size()
+  +font-size(0.75)
+  +breakpoint($tablet-l)
+    +font-size(0.875)
+
+
+//give a px fallback for vh. scaling a font-size from small to large viewport
+=breakpointFontScale ($fontsize, $fontsize-vh: false)
+  font-size: $fontsize
+  @if $fontsize-vh
+    font-size: $fontsize-vh
+  +breakpoint($phone-l)
+    font-size: $fontsize * 1.05
+    @if $fontsize-vh
+      font-size: $fontsize-vh
+  +breakpoint($tablet-l)
+    font-size: $fontsize * 1.2
+    @if $fontsize-vh
+      font-size: $fontsize-vh
+  +breakpoint($desktop)
+    font-size: $fontsize * 1.5
+    @if $fontsize-vh
+      font-size: $fontsize-vh
+
+
+
+//responsive circle - add to selector. circle needs inner div element
+=responsiveCircle($circle-width, $circle-color, $color, $font-size: 5vw, $font-fallback: 3em, $max-font-size: 4.5em)
+  width: $circle-width
+  &:after
+    content: ''
+    display: block
+    width: 100%
+    height: 0
+    background: $circle-color
+    border-radius: 50%
+    padding-bottom: 100%
+  >div
+    color: $color
+    width: 100%
+    +breakpointFontScale ($font-fallback, $font-size)
+    //max font-size 4.5em
+    +breakpoint($desktop-l)
+      font-size: $max-font-size
+    text-align: center
+    +centerer
+    top: 46%

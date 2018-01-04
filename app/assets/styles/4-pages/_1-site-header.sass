@@ -1,0 +1,60 @@
+/* all site general header styles from here */
+body
+  position: relative
+
+.header
+  padding: 0
+  position: absolute
+  width: 100%
+  z-index: 2
+  transition: background-color .3s ease-out
+  background-color: $white
+
+  &__logo-wrapper
+    +size(200px,auto)
+    position: relative
+    float: left
+    background-color: transparent
+    padding-top: $small-spacing
+
+  &__logo-graphic
+    //@include hide-text
+    //background: url(../../assets/img/logo.svg) no-repeat center
+    //filter: invert(100%)
+
+  &__menu-content
+    opacity: 0
+    transform: scale(1.2)
+    transition: all .3s ease-out
+    position: relative
+    z-index: -10
+    padding-top: 0
+    text-align: center
+    display: block
+    //float: right
+    +clearfix
+    +breakpoint($tablet-l)
+      opacity: 1
+      transform: scale(1)
+      z-index: 0
+      //background: blue
+      padding: $small-spacing
+
+    nav
+      margin: 0
+      line-height: 2.3em
+
+  //buttons, social media etc.
+  &__features
+    float: right
+    padding-right: $base-spacing
+    //contact button based on button styles
+    > a.button
+      float:left
+      margin-right: 100px
+
+    +breakpoint($tablet-l)
+      opacity: 1
+      z-index: 1
+      padding-top: 0
+      transform: scale(1)

@@ -1,0 +1,25 @@
+/* all site general footer styles from here */
+
+footer
+  color: $white
+  background-color: $black
+  padding-top: $small-spacing
+  a
+    color: $white
+
+  .footer__legal
+    text-align: center
+    border-top: 1px solid
+    margin-top: $base-spacing
+
+    ul > li
+      display: inline
+      +small-font-size
+      line-height: 4em
+      position: relative
+
+      padding-right: $small-spacing
+      &:not(:last-child)
+        border-right: 1px solid $white
+      &:not(:first-child)
+        padding-left: $small-spacing

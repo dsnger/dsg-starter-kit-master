@@ -1,0 +1,24 @@
+/* hamburger menu icon style, required bower_components hamburger-css */
+
+
+.hamburger
+  position: absolute
+  top: 7px
+  right: $base-spacing
+  z-index: 100
+  visibility: visible
+  border-radius: $base-border-radius
+  &.is-active
+    .hamburger-inner::after, .hamburger-inner::before
+      background-color: light-yellow
+  &:hover
+    &::after
+      content: ' '
+      position: absolute
+      top: -8px
+      left: 0
+      bottom: 0
+      right: 0
+      background-color: rgba(white,0.1)
+      filter: blur(10px)
+      border-radius: 30%

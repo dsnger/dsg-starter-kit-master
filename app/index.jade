@@ -1,0 +1,497 @@
+doctype html
+html.no-js(lang="de")
+  head
+    title DSG-Starter-Kit-Master
+    meta(charset="utf-8")
+    meta(description="Development")
+    meta(keywords="Testing")
+    meta(author="Daniel Sänger Graphics")
+    meta(property="og:title", content="")
+    meta(property="og:description", content="")
+    meta(property="og:image", content="")
+    meta(property="og:url", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="shortcut icon", href="img/favicons/favicon.ico")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", href="temp/css/main.css")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js")
+
+  body.page-home
+    button#hamburger__trigger-overlay.hamburger.hamburger--squeeze(type='button')
+      span.hamburger-box
+        span.hamburger-inner  
+    //wrapper for whole site
+    .site-wrapper
+      header.header
+        .wrapper
+          .header__logo-wrapper
+            a(href="index.html")
+              .header__logo-graphic
+                //img(src="assets/img/logo.svg", alt="Hier ist das Logo", title="Homepage") 
+                | Firmenname Logo
+                
+          .header__menu-content 
+            .header__features 
+              a.button.button--outline.button--small Hallo
+            
+            nav.primary-nav.primary-nav--pull-right
+              ul
+                li
+                  a(href="#") Menu 1
+                li
+                  a(href="#") Menu 2
+              
+      main
+        section.large-hero
+          .wrapper
+            picture
+              //hero--large-hi-dpi.jpg or image test image with width numbers inside: hero--large-hi-dpi-i.jpg
+              source(data-srcset="assets/img/hero--large-i.jpg 1920w, assets/img/hero--large-hi-dpi-i.jpg 3840w", media="(min-width: 1280px)")
+              source(data-srcset="assets/img/hero--medium-i.jpg 1380w, assets/img/hero--medium-hi-dpi-i.jpg 2760w", media="(min-width: 990px)")
+              source(data-srcset="assets/img/hero--small-i.jpg 990w, assets/img/hero--small-hi-dpi-i.jpg 1980w", media="(min-width: 640px)")
+              img.large-hero__image.lazyload(src="assets/img/hero--smaller-i.jpg", alt="Coastal view of ocean and mountains")
+            
+            .large-hero__text-content
+              .wrapper
+                h1.large-hero__title Here is the title
+                h2.large-hero__subtitle and here the subtitle
+                p.large-hero__description We create websites for fun and information.
+                a.button Get Started Today        
+
+        section.grid
+          .wrapper
+            h2 Grid
+            .container.grid__4-cols
+              .__grid-item
+                .wrapper
+                    ul
+                      li
+                        h4 Helpers
+                      li
+                        a(href="http://html2jade.org/", target="_blank") HTML2Jade
+                      li 
+                        a(href="https://www.sassmeister.com/", target="_blank") SCSS to SASS
+                      li
+                        a(href="http://www.loremipsum.de/", target="_blank") Lorem Ipsum
+                      li
+                        a(href="https://placeholder.com/", target="_blank") Placeholder Images Blank
+                      li
+                        a(href="https://placeimg.com", target="_blank") Placeholder Images
+                    
+                  
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 HTML & CSS
+                    li
+                      a(href="http://jade-lang.com/", target="_blank") Jade Lernen
+                    li
+                      a(href="http://bourbon.io/", target="_blank") BOURBON
+                    li
+                      a(href="http://kylebrumm.com/juice/", target="_blank") JUICE
+                    li
+                      a(href="http://bitters.bourbon.io/", target="_blank") BITTERS
+                    li
+                      a(href="http://refills.bourbon.io/", target="_blank") REFILLS
+                  
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 Grids Sass
+                    li
+                      a(href="http://susydocs.oddbird.net/en/latest/", target="_blank") Susy Grid
+                    li
+                      a(href="https://neat.bourbon.io/", target="_blank") NEAT grid
+                    li
+                      a(href="http://breakpoint-sass.com/", target="_blank") Breakpiont SASS
+                    li
+                      a(href="https://github.com/at-import/breakpoint/wiki", target="_blank") Breakpiont Wiki
+              
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 Frameworks
+                        small  (not included)
+                    li
+                      a(href="http://getbootstrap.com/", target="_blank") Bootstrap
+                    li
+                      a(href="https://semantic-ui.com/", target="_blank") Semantic UI
+                    li
+                      a(href="http://materializecss.com/", target="_blank") Materialize
+                    li
+                      a(href="https://getmdl.io/started/", target="_blank") Material Design Lite
+                    li
+                      a(href="https://material.angularjs.org/latest/", target="_blank") Angular Matrial
+                      
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 Tools
+                    li
+                      a(href="http://fian.my.id/Waves/", target="_blank") Waves
+                    li
+                      a(href="https://jonsuh.com/hamburgers/", target="_blank") Hamburgers
+                    li
+                      a(href="https://daneden.github.io/animate.css/", target="_blank") Animate.css
+                
+                      
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 Inspiration
+                    li
+                      a(href="https://tympanus.net/codrops/", target="_blank") Codrops
+                    li
+                      a(href="https://codyhouse.co/", target="_blank") Codyhouse
+                      
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 Doku / Tipps
+                    li
+                      a(href="http://getbem.com/", target="_blank") BEM
+                    li
+                      a(href="http://www.modularscale.com/", target="_blank") Modular Scale
+                    li
+                      a(href="http://callmenick.com/", target="_blank") Callmenick
+                    li
+                      a(href="https://css-tricks.com/", target="_blank") CSS Tricks
+                    li
+                      a(href="https://blog.kulturbanause.de", target="_blank") Kulturbanause
+                    li
+                      a(href="http://www.modularscale.com/", target="_blank") Typo Modular Scale
+                      
+                      
+                      
+                      
+                  
+                      
+              .__grid-item
+                .wrapper
+                  ul
+                    li
+                      h4 Icons
+                    li
+                      a(href="http://fontawesome.io/", target="_blank") FontAwesome
+                    li
+                      a(href="http://materializecss.com/icons.html", target="_blank") Material
+                    li
+                      a(href="http://ionicons.com/", target="_blank") Ionicons
+
+        section.elements
+          .wrapper
+
+              h1 Heading 1
+              h2 Heading 2
+              h3 Heading 3
+              h4 Heading 4
+              
+              p
+                | Lorem ipsum dolor sit amet, 
+                a(href='#', title='test link') test link
+                |         adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec
+                |         faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero
+                |         nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent
+                |         mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
+                |         volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus
+                |         eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem,
+                |         consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue
+                |         quis tellus.
+              p
+                small Small: Nullam dignissim convallis est.
+              h3 Heading 1 With Paragraph
+              p 
+                | Lorem Ipsum available, but the majority have suffered This alteration in some from, by injected is a humour, 
+                | or randomised words which don't look even sligh is made believable. If to use and yammi passage of Lorem Ipsum, you 
+                | need to  be sure there isn't by pioneer designer anything embarrassing hidden in the middle of
+              p
+                | Lorem ipsum dolor sit amet, 
+                em emphasis
+                |  consectetuer adipiscing
+                |         elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus.
+                |         Nunc iaculis 
+                strong strong 
+                |  dui. Nam sit amet sem. Aliquam libero nisi,
+                |         imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis,
+                |         massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim
+                |         diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien
+                |         fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at,
+                |         commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
+              
+              
+              h3 Buttons
+              button(value='', role='button') Default  
+              button(value='', role='button').button--effect Effectiv  
+              button(value='Disabled', disabled='',role='button') Disabled
+              button(value='', role='button').button--outline Outline
+              button(value='', role='button').button--light Light
+              button(value='', role='button').button--small Small Button
+              button(value='', role='button').button--large Large Button
+              
+              h3 Buttons mit Effekt
+              button(value='', role='button').button--radomir.button--effect-radomir Radomir
+              button(value='', role='button').button--outline.ripple-effect.ripple-dark Light
+              button(value='', role='button').ripple-effect Ripple
+              button(value='', role='button').ripple-effect.ripple-dark Ripple Dark
+              button(value='', role='button').button--light.ripple-effect.ripple-dark Light
+              
+              h3 Ordered List
+              ol
+                li List Item 1
+                li List Item 2
+                li List Item 3
+              
+              h3 Unordered List
+              ul
+                li List Item 1
+                li List Item 2
+                li List Item 3
+              
+              h3 List Icons
+              ul.list--icons
+                li List Item 1
+                li List Item 2
+                li List Item 3
+              
+              h3 Definition List
+              dl
+                dt Definition Term Title 1
+                dd Definition term description
+                dt Definition Term Title 2
+                dd Definition term description
+                dt Definition Term Title 3
+                dd Definition term description
+              
+              h3 Blockquote  
+              blockquote Injected humour, or randomised words which don’t look even sligh is made  believable If  to use and passage of Lorem Ipsum.Hello Im Secspaire.
+              
+              h3 Preformatted
+              pre
+                code i = 0;
+                    | while (!deck.isInOrder()) {
+                    |  print 'Iteration ' + i;
+                    |  deck.shuffle();
+                    |  i++;
+                    |  }
+                    |  print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+              
+              h3 Icons FontAwesome
+              i.fa.fa-facebook(aria-hidden='true')
+              i.fa.fa-twitter(aria-hidden='true')
+              i.fa.fa-google-plus(aria-hidden='true')
+              i.fa.fa-pinterest(aria-hidden='true')
+              
+              h3 Icons Material
+              i.material-icons add
+              i.material-icons insert_chart
+              
+              
+              h3 Divider
+              hr
+              
+              h3 Table
+              table
+                thead
+                  tr
+                    th Table Header 1
+                    th Table Header 2
+                    th Table Header 3
+                tbody
+                  tr
+                    td Division 1
+                    td Division 2
+                    td Division 3
+                  tr
+                    td Division 1
+                    td Division 2
+                    td Division 3
+                  tr
+                    td Division 1
+                    td Division 2
+                    td Division 3
+                tfoot
+                  tr
+                     td
+                     td
+                     td SUMME
+              .table--scrollable
+                h3 Table striped
+                table.table--striped
+                 thead
+                   tr
+                     th Table Header 1
+                     th Table Header 2
+                     th Table Header 3
+                 tbody
+                   tr
+                     td Division 1
+                     td Division 2
+                     td Division 3
+                   tr
+                     td Division 1
+                     td Division 2
+                     td Division 3
+                   tr
+                     td Division 1
+                     td Division 2
+                     td Division 3
+                 tfoot
+                   tr
+                      td
+                      td
+                      td SUMME
+              hr
+              h3 Forms
+              form(method="POST", action="")
+                
+                h4 Textfield
+                .input-field
+                  input#company.validate(type='text', name='Unternehmen/Branche')
+                  label(for='Firma') Unternehmen (Branche)
+                
+                h4 Textfield required
+                .input-field
+                  input#first_name.validate(type='text', required='', name='Vorname')
+                  label(for='first_name') Vorname*
+                .input-field
+                  input#last_name.validate(type='text', required='', name='Nachname')
+                  label(for='last_name') Nachname*
+                
+                h4 Email required
+                .input-field
+                  input#email.validate(type='email', required='', name='E-Mail')
+                  label(for='email', data-error='wrong', data-success='right') E-Mail*
+                
+                h4 Textarea
+                .input-field
+                  textarea#message.materialize-textarea(name='Nachricht')
+                  label(for='message') Nachricht
+              
+                h4 Multiple Select
+                .input-field  
+                  label(for='service') Was können wir für Sie tun?
+                  br
+                .input-field
+                  select#service(multiple, name='Serviceanfrage')
+                    option(value='', selected, disabled) Wählen Sie
+                    option(value='Webdesign') Webdesign
+                    option(value='Grafikdesign') Printmedien
+                    option(value='Werbemittel') Werbemittel
+                    option(value='Illustration') Illustration
+                    option(value='Animation') Animation
+                    option(value='Text') Text
+                
+                h4 Select    
+                .input-field
+                  label(for='budget') Sie haben ein Budget?
+                  br
+                .input-field.col.s12
+                  select#budget(name='Budget')
+                    option(value='', selected, disabled) Wählen Sie
+                    option(value='-500') < 500€
+                    option(value='500-1000') 500 - 1000€
+                    option(value='1000-8000') 1000€ - 8000€
+                    option(value='8000+') > 8000€
+                
+                h4 Radio
+                .input-field
+                  label Wie haben Sie mich gefunden? Durch...
+                  br
+                .input-field
+                  input#google(name='gefunden', type='radio', value='Google')
+                  label(for='google') Google
+                .input-field
+                  input#customer(name='gefunden', type='radio', value='Kunden')
+                  label(for='customer') Kunden
+                
+                br
+                h4 Checkboxes
+                .input-field
+                  label Rückmeldung lieber per 
+                  br
+                .input-field
+                  input#emailComm(name='Antwort per', type='checkbox', value='E-Mail')
+                  label(for='emailComm') E-Mail-Antwort
+                
+                .input-field
+                  input#callComm(name='Antwort', type='checkbox', value='Rückruf')
+                  label(for='callComm') Rückruf
+              
+                .input-field
+                    button.button.waves-effect.waves-light.spacer(type='submit') Nachricht senden
+
+               
+      footer
+        .footer__content
+          .wrapper
+            .container.grid__3-cols
+              .__grid-item
+                .wrapper
+                  ul
+                    li 
+                      a(href='#') Impressum
+                    li 
+                      a(href='#') Disclaimer
+                    li 
+                      a(href='#') Lotto
+              .__grid-item
+                .wrapper
+                  ul
+                    li 
+                      a(href='#') Impressum
+                    li 
+                      a(href='#') Disclaimer
+                    li 
+                      a(href='#') Lotto
+    
+              .__grid-item
+                .wrapper
+                  ul
+                    li 
+                      a(href='#') Impressum
+                    li 
+                      a(href='#') Disclaimer
+                    li 
+                      a(href='#') Lotto
+        
+        .footer__legal.container
+          .wrapper
+            ul
+              li 
+                a(href='#') Impressum
+              li 
+                a(href='#') Disclaimer
+              li © 2018 DSGRAPHICS - Illustration und Kommunikationsdesign
+          
+      
+        //primary-nav in site overlay
+    
+    .nav-overlay.nav-overlay--contentpush
+      nav
+        ul
+          li
+            a(href='#') Home
+          li
+            a(href='#') About
+          li
+            a(href='#') Work
+          li
+            a(href='#') Clients
+          li
+            a(href='#') Contact
+
+    
+  
+  script(src="temp/js/Vendor.js")
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js')
+  script(src="temp/js/App.js")
+
+
+  

@@ -1,0 +1,63 @@
+/* all general site layout styles from here */
+
+//Neat Grid variables
+$color-neat-blue: #53aee0
+$color-neat-orange: #ff7c56
+$color-white: #fff
+
+$neat-grid: (columns: 12,gutter: $base-spacing)
+
+/* helper */
+//margins for top and bottom of sections
+.spacer
+  margin: $base-spacing 0
+
+.spacer--large
+  margin: 2 * $base-spacing 0
+
+.spacer--huge
+  margin: 4 * $base-spacing 0
+
+.spacer-top
+  margin-top: $base-spacing
+
+.spacer-top--large
+  margin-top: 2 * $base-spacing
+
+.spacer-top--huge
+  margin-top: 4 * $base-spacing
+
+
+//WRAPPER: center content and define max width and padding. Use with or without .container
+.wrapper
+  //overflow: hidden
+  position: relative
+  padding-left: $small-spacing
+  padding-right: $small-spacing
+  width: 100%
+  max-width: $desktop
+  margin-left: auto
+  margin-right: auto
+
+
+.wrapper
+  .wrapper
+    padding-top: $small-spacing
+    padding-bottom: $small-spacing
+
+section
+  .wrapper
+    padding-top: $base-spacing
+    padding-bottom: $base-spacing
+
+
+.intro
+  padding-top: 0
+
+.container
+  //+grid-visual
+  +grid-collapse
+  +clearfix
+  &__flex
+    display: flex
+    flex-wrap: wrap

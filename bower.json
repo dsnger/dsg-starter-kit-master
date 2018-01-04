@@ -1,0 +1,46 @@
+{
+  "name": "dsgraphics-starter-kit-master",
+  "homepage": "https://github.com/dsnger/dsg-development",
+  "authors": [
+    "Daniel <dsnger@arcor.de>"
+  ],
+  "description": "dsgraphics-starter-kit-master",
+  "main": "index.html",
+  "keywords": [
+    "website"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "materialize": "^0.100.1",
+    "bourbon": "^4.3.4",
+    "susy": "^3.0.0",
+    "breakpoint-sass": "^2.7.1",
+    "css-hamburgers": "^0.9.1",
+    "lazyload": "^3.2.2",
+    "waypoints": "^4.0.1",
+    "aos": "^2.2.0",
+    "picturefill": "^3.0.3",
+    "gulp": "^3.9.1",
+    "modernizr": "^3.5.0",
+    "lazysizes": "^3.0.0",
+    "juice": "^1.0.1",
+    "flip": "^1.1.2",
+    "neat": "^2.1.0",
+    "css-ripple-effect": "^1.0.8",
+    "angular-material": "^1.1.5",
+    "html5shiv": "^3.7.3"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize-css": "^7.0.0",
+    "lightbox2": "lightbox#^2.9.0",
+    "slick-carousel": "^1.7.1"
+  }
+}

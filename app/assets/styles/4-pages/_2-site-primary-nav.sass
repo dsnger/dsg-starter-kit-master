@@ -1,0 +1,24 @@
+/* nav styles for primary-nav */
+.primary-nav
+  &--pull-right
+    float: right
+
+
+  li
+    display: inline-block
+    padding-right: $base-spacing
+
+    &:last-child
+      padding-right: $base-spacing
+
+    a
+      color: $black
+      font-weight: 300
+      padding-bottom: 5px
+
+      &:hover
+        color: $brand
+        border-bottom: 2px solid $brand
+
+      &.is-current-link
+        color: $brand

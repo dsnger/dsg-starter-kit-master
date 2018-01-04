@@ -1,0 +1,88 @@
+//Typo MIXINS
+
+// Breakpoints
+$phone-p: 20em
+$phone-l: 41.875em
+$tablet-p: 48em
+$tablet-l: 64em
+$desktop: 75em
+$desktop-l: 100em
+$retina-dpi: min-resolution 2dppx
+$retina-reso: max-resolution 143dpi
+
+// Typography
+$base-font-family: "Open Sans", sans-serif
+$heading-font-family: "Opens Sans", sans-serif
+
+// Font Sizes for body and HTML
+$root-font-size: 16px
+
+// Line height
+$base-line-height: 1.6
+$heading-line-height: 1.4
+
+// Other Sizes
+
+$base-spacing: $base-line-height * 1.2em
+$small-spacing: $base-spacing / 2
+$big-spacing: $base-spacing * 3
+$base-z-index: 0
+
+// Colors
+$blue: #1565c0
+$dark-gray: #333
+$medium-gray: #ccc
+$light-gray: #f5f5f5
+
+// Cool
+$aqua: #7FDBFF
+$blue: #0074D9
+$navy: #001F3F
+$teal: #39CCCC
+$green: #2ECC40
+$olive: #3D9970
+$lime: #01FF70
+
+// Warm
+$yellow: #FFDC00
+$orange: #FF851B
+$red: #FF4136
+$fuchsia: #F012BE
+$purple: #B10DC9
+$maroon: #85144B
+
+// Gray Scale
+$white: #fafafa
+$silver: #ddd
+$gray: #aaa
+$black: #222
+
+$brand: #e7543d
+$brand-secondary: darken(#e7543d, 20)
+
+// Font Colors
+$base-font-color: $black
+$headline-font-color: $black
+$action-color: $brand
+
+// Border
+$base-border-color: $medium-gray
+$base-border: 1px solid $base-border-color
+$base-border-radius: 5px
+
+// Background Colors
+$base-background-color: $white
+$secondary-background-color: tint($base-border-color, 75%)
+
+// Forms
+$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06)
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3)
+
+// Animations
+$base-duration: 0.1s
+$base-timing: ease-out
+
+//Boxes / effects
+$base-box-shadow: 1px 2px 6px 0px rgba(0,0,0,0.3)
+$text-shadow: 2px 2px 0 rgba(0, 0, 0, .1)
+$box-shadow: 0 2px 4px darken($gray, 10%)

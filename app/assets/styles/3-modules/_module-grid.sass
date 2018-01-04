@@ -1,0 +1,42 @@
+/* grid styles for 2 or more grid items in a row */
+
+.grid
+
+  *[class*='grid__']
+    display: flex
+    flex-wrap: wrap
+
+  .__grid-item
+    //show border of items
+    border: 2px solid red
+    margin-bottom: $base-spacing
+    box-shadow: $base-box-shadow
+
+    h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child
+      margin-top: $small-spacing/2
+
+    //change wrapper top- and bottom for grid items. wrapper can be found in setup/setup-layout.sass
+    .wrapper
+      padding: $small-spacing $small-spacing $base-spacing
+
+  &__2-cols
+    .__grid-item
+      +grid-column(12)
+      +breakpoint($tablet-l)
+        +grid-column(6)
+
+  &__3-cols
+    .__grid-item
+      +grid-column(12)
+      +breakpoint($phone-l)
+        +grid-column(6)
+      +breakpoint($tablet-l)
+        +grid-column(4)
+
+  &__4-cols
+    .__grid-item
+      +grid-column(12)
+      +breakpoint($phone-l)
+        +grid-column(6)
+      +breakpoint($tablet-l)
+        +grid-column(3)
