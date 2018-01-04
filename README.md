@@ -1,11 +1,27 @@
 # dsg-starter-kit-master
 
+// TODOS:
+
+
+
+// CHANGELOG:
+
+
+
+//FEATURES:
+
+
+//DESCRIPTION
 
 SASS/CSS
 Using BEM (Block Element Modifier) naming methode.
 f.e. block__element--modifier
 
 
+
+
+
+//FEATURES
 
 || Browser support
 https://modernizr.com/docs
@@ -14,7 +30,6 @@ Picturefill (Support of <picture> and srcset Elements)
 
 || Loading Speed
 Lazyload (loading elements/images only if they are in view)
-
 
 
 || Animation
@@ -30,7 +45,6 @@ https://tympanus.net/Tutorials/PagePreloadingEffect/index.html
 
 || Header sticky
 Logo und Hamburger Menu
-Telefon und E-Mail
 Größe ändern nach Scrollen
 https://tympanus.net/Blueprints/AnimatedHeader/
 

@@ -25,3 +25,9 @@ li, dd, dt
     margin-right: 0.5em
     vertical-align: sub
     font-size: 1.25em
+
+.list--inline
+  li
+    display: inline-block
+    &:not(:first-child)
+      margin-left: $small-spacing

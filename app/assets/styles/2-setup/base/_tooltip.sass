@@ -1,0 +1,277 @@
+//_tooltip.sass
+
+
+//positioning of tooltipbox and triangle
+=tooltip-positioning($tooltip-position: 'bottom', $tooltip-arrow-length: 1em)
+
+  @if $tooltip-position == bottom
+    left: 50%
+    top: 110%
+    margin-top: $tooltip-arrow-length
+    //triangle position
+    &::after, &::before
+      bottom: 100%
+      left: 50%
+
+  @else if $tooltip-position == top
+    left: 50%
+    bottom: 110%
+    margin-bottom: $tooltip-arrow-length
+    //triangle position
+    &::after, &::before
+      top: 100%
+      left: 50%
+
+  @else if $tooltip-position == right
+    left: 110%
+    bottom: 50%
+    margin-left: $tooltip-arrow-length
+    //triangle position
+    &::after
+      bottom: 50%
+      right: 100%
+
+    &::before
+      bottom: 49.8%
+      right: 100%
+
+
+  @else if $tooltip-position == left
+    right: 110%
+    bottom: 50%
+    margin-right: $tooltip-arrow-length
+    //triangle position
+    &::after, &::before
+      top: 50%
+      left: 100%
+
+
+//drawing triangle depending on tooltip position - tooltip with oder whithout border
+=draw-triangle($tooltip-position, $tooltip-background-color, $tooltip-arrow-base, $tooltip-arrow-length, $tooltip-border-width)
+    &::after
+      @if $tooltip-position == bottom
+        // Draw a triangle.
+        border-bottom: ($tooltip-arrow-length - $tooltip-border-width) solid $tooltip-background-color
+        border-left: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        border-right: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        // Center the triangle.
+        margin-left: $tooltip-border-width - $tooltip-arrow-base / 2
+
+      @else if $tooltip-position == top
+        // Draw a triangle.
+        border-top: ($tooltip-arrow-length - $tooltip-border-width) solid $tooltip-background-color
+        border-left: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        border-right: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        // Center the triangle.
+        margin-left: $tooltip-border-width - $tooltip-arrow-base / 2
+
+      @else if $tooltip-position == right
+        // Draw a triangle.
+        border-right: ($tooltip-arrow-length - $tooltip-border-width) solid $tooltip-background-color
+        border-bottom: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        border-top: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        // Center the triangle.
+        margin-bottom: $tooltip-border-width - $tooltip-arrow-base / 2
+
+      @else if $tooltip-position == left
+        // Draw a triangle.
+        border-left: ($tooltip-arrow-length - $tooltip-border-width) solid $tooltip-background-color
+        border-bottom: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        border-top: ($tooltip-arrow-base / 2 - $tooltip-border-width) solid transparent
+        // Center the triangle.
+        margin-top: $tooltip-border-width - $tooltip-arrow-base / 2
+
+
+//special style for tooltip with border
+=draw-triangle-border($tooltip-position, $tooltip-background-color, $tooltip-arrow-base, $tooltip-arrow-length, $tooltip-border-width, $tooltip-border-color)
+  border: $tooltip-border-width solid $tooltip-border-color
+  &::before
+    @if $tooltip-position == bottom
+      // Draw another triangle to simulate a border.
+      border-bottom: $tooltip-arrow-length solid $tooltip-border-color
+      border-left: ($tooltip-arrow-base / 2) solid transparent
+      border-right: ($tooltip-arrow-base / 2) solid transparent
+
+      // Center the triangle.
+      margin-left: $tooltip-arrow-base / -2
+
+    @else if $tooltip-position == top
+      // Draw another triangle to simulate a border.
+      border-top: $tooltip-arrow-length solid $tooltip-border-color
+      border-left: ($tooltip-arrow-base / 2) solid transparent
+      border-right: ($tooltip-arrow-base / 2) solid transparent
+
+      // Center the triangle.
+      margin-left: $tooltip-arrow-base / -2
+
+    @else if $tooltip-position == right
+      // Draw another triangle to simulate a border.
+      border-right: $tooltip-arrow-length solid $tooltip-border-color
+      border-bottom: ($tooltip-arrow-base / 2) solid transparent
+      border-top: ($tooltip-arrow-base / 2) solid transparent
+
+      // Center the triangle.
+      margin-bottom: $tooltip-arrow-base / -2
+
+    @else if $tooltip-position == left
+      // Draw another triangle to simulate a border.
+      border-left: $tooltip-arrow-length solid $tooltip-border-color
+      border-bottom: ($tooltip-arrow-base / 2) solid transparent
+      border-top: ($tooltip-arrow-base / 2) solid transparent
+
+      // Center the triangle.
+      margin-top: $tooltip-arrow-base / -2
+
+
+//tooltipp field mixin
+=tooltip($tooltip-position: 'top', $tooltip-border: false)
+
+  //VARIABLES base setup - Change Styles here
+  $tooltip-background-color: $black
+  $tooltip-arrow-base: 1em
+  $tooltip-arrow-length: 0.65em
+  $tooltip-border-width: 0
+  $tooltip-border-color: transparent
+  $tooltip-transition-out-duration: 0.2s
+  $tooltip-shadow: 0 2px 3px $medium-gray
+  color: #FFF
+
+  //for style with border
+  @if $tooltip-border == true
+    $tooltip-background-color: white
+    $tooltip-arrow-base: 1.5em
+    $tooltip-arrow-length: 1em
+    $tooltip-border-width: 0.1em
+    $tooltip-border-color: $medium-gray
+    $tooltip-transition-out-duration: 0.2s
+    $tooltip-shadow: 0 3px 6px $medium-gray
+    color: #333
+
+
+  // Sizing and positioning
+  box-sizing: border-box
+  position: absolute
+
+  // Shadow
+  box-shadow: $tooltip-shadow
+  border-radius: $base-border-radius
+
+  // Text and color properties.
+  background-color: $tooltip-background-color
+  text-align: center
+  font-size: modular-scale(-1)
+  line-height: 1.3
+
+  // Animated properties.
+  visibility: hidden
+  opacity: 0
+  @if $tooltip-position == bottom
+    transform: translate(-50%, $tooltip-arrow-length)
+  @else if $tooltip-position == top
+    transform: translate(-50%, -50%)
+  @else if $tooltip-position == right
+    transform: translate($tooltip-arrow-length, 50%)
+  @else if $tooltip-position == left
+    transform: translate(-$tooltip-arrow-length, 50%)
+
+  transition: visibility 0s linear $tooltip-transition-out-duration, opacity $tooltip-transition-out-duration ease-in 0s, transform $tooltip-transition-out-duration ease-in 0s
+
+  // Disable events.
+  pointer-events: none
+
+  &::after, &::before
+    content: ''
+    position: absolute
+    width: 0
+    height: 0
+
+  +tooltip-positioning($tooltip-position, $tooltip-arrow-length)
+  +draw-triangle($tooltip-position, $tooltip-background-color, $tooltip-arrow-base, $tooltip-arrow-length, $tooltip-border-width)
+
+  @if $tooltip-border-width
+    +draw-triangle-border($tooltip-position, $tooltip-background-color, $tooltip-arrow-base, $tooltip-arrow-length, $tooltip-border-width, $tooltip-border-color)
+
+
+
+//tooltip anchor mixin
+=has-tooltip($tooltip-transition-in-duration: 0.3s)
+  position: relative
+  // Prevent the tooltip from being clipped by its container.
+  overflow: visible
+  // Display the tooltip on hover and on focus.
+  &:hover, &:focus
+    .tooltip--bottom.tooltip--with-border,
+    .tooltip--bottom.tooltip--without-border
+      visibility: visible
+      opacity: 1
+      transform: translate(-50%, 0)
+      // horizontally centered
+      transition: visibility 0s linear 0s, opacity $tooltip-transition-in-duration ease-out 0s, transform $tooltip-transition-in-duration ease-out 0s
+
+    .tooltip--top.tooltip--with-border,
+    .tooltip--top.tooltip--without-border
+      visibility: visible
+      opacity: 1
+      transform: translate(-50%, 0%)
+      // horizontally centered
+      transition: visibility 0s linear 0s, opacity $tooltip-transition-in-duration ease-out 0s, transform $tooltip-transition-in-duration ease-out 0s
+
+
+    .tooltip--right.tooltip--with-border,
+    .tooltip--right.tooltip--without-border
+      visibility: visible
+      opacity: 1
+      transform: translate(0, 50%)
+      // horizontally centered
+      transition: visibility 0s linear 0s, opacity $tooltip-transition-in-duration ease-out 0s, transform $tooltip-transition-in-duration ease-out 0s
+
+    .tooltip--left.tooltip--with-border,
+    .tooltip--left.tooltip--without-border
+      visibility: visible
+      opacity: 1
+      transform: translate(0, 50%)
+      // horizontally centered
+      transition: visibility 0s linear 0s, opacity $tooltip-transition-in-duration ease-out 0s, transform $tooltip-transition-in-duration ease-out 0s
+
+
+
+//USAGE TOOLTIPS
+
+//TOOLTIP HOST
+.has-tooltip
+  +has-tooltip($tooltip-transition-in-duration: 0.3s)
+
+//TOOLTIP class for span element + tooltipp position + borderstyle
+.tooltip
+  min-width: 10em
+  padding: .5em .75em
+  box-shadow: 0 0.05em 0.15em rgba(black, 0.1)
+  z-index: 100
+
+  &.tooltip--bottom
+    &.tooltip--with-border
+      +tooltip($tooltip-position: 'bottom', $tooltip-border: true)
+
+    &.tooltip--without-border
+      +tooltip($tooltip-position: 'bottom', $tooltip-border: false)
+
+  &.tooltip--top
+    &.tooltip--with-border
+      +tooltip($tooltip-position: 'top', $tooltip-border: true)
+
+    &.tooltip--without-border
+      +tooltip($tooltip-position: 'top', $tooltip-border: false)
+
+  &.tooltip--right
+    &.tooltip--with-border
+      +tooltip($tooltip-position: 'right', $tooltip-border: true)
+
+    &.tooltip--without-border
+      +tooltip($tooltip-position: 'right', $tooltip-border: false)
+
+  &.tooltip--left
+    &.tooltip--with-border
+      +tooltip($tooltip-position: 'left', $tooltip-border: true)
+
+    &.tooltip--without-border
+      +tooltip($tooltip-position: 'left', $tooltip-border: false)
