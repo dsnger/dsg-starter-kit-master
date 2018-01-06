@@ -1,17 +1,34 @@
-# dsg-starter-kit-master
+# [dsgraphics-starter-kit-wp]()
 
-// TODOS:
+Basic Template file for rapidly deploying WordPress projects based on html5blank.com (http://html5blank.com)
+and an dsgraphics-starter-kit-master
 
-
-
-// CHANGELOG:
-
-
-
-//FEATURES:
+* Project: [github.com/toddmotto/html5blank](https://github.com/dsnger/dsgraphics-starter-kit-master)
+* Website: [dsgraphics.de](http://dsgraphics.de)
+* Author : [Daniel Sänger](http://daniel-saenger.de) // [@toddmotto](http://twitter.com/dsnger)
 
 
-//DESCRIPTION
+## Getting Started with dsgraphics-starter-kit-wp
+
+Download the latest version from [Github](https://github.com/dsnger/dsgraphics-starter-kit-master)
+
+##TODOS
+
+* Accordion
+* Tabs
+* Slider
+* Cards
+* Protocol relative jQuery if Google CDN offline (HTML5 Boilerplate)
+* Conditionizr for cross-platform/device detects and enhancements
+* Modernizr feature detection, HTML5 element support for legacy, progressive enhancement (HTML5 Boilerplate)
+
+
+
+
+##FEATURES
+
+
+##DESCRIPTION
 
 SASS/CSS
 Using BEM (Block Element Modifier) naming methode.
@@ -21,7 +38,7 @@ f.e. block__element--modifier
 
 
 
-//FEATURES
+##RESOURCES
 
 || Browser support
 https://modernizr.com/docs
