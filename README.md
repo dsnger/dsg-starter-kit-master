@@ -1,14 +1,14 @@
-# [dsgraphics-starter-kit-wp]()
+# [dsgraphics-starter-kit-wp](https://github.com/dsnger/dsgraphics-starter-kit-master)
 
 Basic Template file for rapidly deploying WordPress projects based on html5blank.com (http://html5blank.com)
 and an dsgraphics-starter-kit-master
 
-* Project: [github.com/toddmotto/html5blank](https://github.com/dsnger/dsgraphics-starter-kit-master)
+* Project: [github.com/dsnger/dsgraphics-starter-kit-master](https://github.com/dsnger/dsgraphics-starter-kit-master)
 * Website: [dsgraphics.de](http://dsgraphics.de)
-* Author : [Daniel Sänger](http://daniel-saenger.de) // [@toddmotto](http://twitter.com/dsnger)
+* Author : [Daniel Sänger](http://daniel-saenger.de) // [@dsnger](http://twitter.com/dsnger)
 
 
-## Getting Started with dsgraphics-starter-kit-wp
+## Getting Started with dsgraphics-starter-kit-master
 
 Download the latest version from [Github](https://github.com/dsnger/dsgraphics-starter-kit-master)
 
